@@ -2,23 +2,28 @@ package com.djxc.mySwing;
 
 import java.awt.*;
 import javax.swing.*;
+import com.djxc.mySwing.component.TxtComponent;
 
 /**
- *
+ * @author djxc
+ * @version 1.0
+ * It's a demo for show frame.
  */
 public class SimpleFrame
 {
-	public static void main(String[] args)
+	public void showFrame(String title)
 	{
 		EventQueue.invokeLater(new Runnable()
 		{
 			public void run()
 			{
-				mySimpleFrame frame = new mySimpleFrame();
+				JFrame frame = new mySimpleFrame();
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setTitle(title);
 				frame.setVisible(true);
 			}
 		});
+
 	}
 }
 class mySimpleFrame extends JFrame
@@ -27,7 +32,8 @@ class mySimpleFrame extends JFrame
 	private static final int DEFALUT_HEIGHT = 300;
 	public mySimpleFrame()
 	{
-		setSize(DEFALUT_WIDTH, DEFALUT_HEIGHT);
+		add(new TxtComponent());
+		pack();
+//		setSize(DEFALUT_WIDTH, DEFALUT_HEIGHT);
 	}
 }
-
