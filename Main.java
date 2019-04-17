@@ -1,11 +1,11 @@
-import com.djxc.mySwing.SimpleFrame;
+import com.djxc.mySwing.myWindow;
 
 public class Main
 {
 	public static void main(String[] arg)
 	{
 		System.out.println("Hello world!");
-		SimpleFrame sFrame = new SimpleFrame();
-		sFrame.showFrame("djApp");
+		myWindow window = new myWindow();
+		window.showWindow("djApp");
 	}
 }
