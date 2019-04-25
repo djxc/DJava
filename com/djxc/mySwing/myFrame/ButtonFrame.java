@@ -3,7 +3,10 @@ package com.djxc.mySwing.myFrame;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
+/**
+ * 添加按钮，并添加按钮事件
+ * 使用匿名内部类，使代码更加简洁
+ */
 public class ButtonFrame extends JFrame
 {
 	private JPanel buttonPanel;
@@ -13,37 +16,31 @@ public class ButtonFrame extends JFrame
 	public ButtonFrame()
 	{
 		setSize(DEFALUT_WIDTH, DEFALUT_HEIGHT);
-
-		JButton yButton = new JButton("Yellow");
-		JButton bButton = new JButton("Blue");
-		JButton rButton = new JButton("Red");
-
-		buttonPanel = new JPanel();
-		buttonPanel.add(yButton);
-		buttonPanel.add(bButton);
-		buttonPanel.add(rButton);
-		
+		buttonPanel = new JPanel();	
+	
+		buildButton("Yellow", Color.YELLOW);
+		buildButton("Blue", Color.BLUE);
+		buildButton("Red", Color.RED);
+	
 		add(buttonPanel);
-		ColorAction yAction = new ColorAction(Color.YELLOW);
-		yButton.addActionListener(yAction);
-	}
-		
-	private class ColorAction implements ActionListener
-	{
-			private Color backgroundColor;
 
-			public ColorAction(Color c)
-			{
-				backgroundColor = c;
-				System.out.println("new ColorAction");
-			}
-			
+	}
+	
+	public void buildButton(String title,final Color color)
+	{
+		JButton button = new JButton(title);
+		buttonPanel.add(button);
+		button.addActionListener(new ActionListener()
+		{
 			public void actionPerformed(ActionEvent event)
 			{
-				buttonPanel.setBackground(backgroundColor);
+				buttonPanel.setBackground(color);
 			}
 
+		});
+
 	}
+
 }
 
 
