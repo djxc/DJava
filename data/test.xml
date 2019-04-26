@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<configurate>
+    <font>
+        <name>djxc</name>
+        <age>23</age>
+    </font>
+    <phone>
+        <color>yellow</color>
+        <price>1299</price>
+        <family>
+            <parent>
+                <mama>zhang</mama>
+                <baba>du</baba>                
+            </parent>
+            <children>
+                <sister>hua</sister>
+                <I>dj</I>
+            </children>
+        </family>
+    </phone>
+</configurate>
